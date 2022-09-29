@@ -141,17 +141,17 @@ function getMeetingssection() {
 }
 
 function GetMeetingSessions(data) {
-    console.log("hostEmail", data);
-    const obj = {
+    
+    const obj = JSON.stringify({
         hostEmail: data.hostEmail,
 
-    }
+    })
     fetch(`https://webexapis.com/v1/meetings/${id}/breakoutSessions`, {
         method: "GET",
         headers: {
             'Content-type': 'application/json',
             'Authorization': `Bearer  ${token}`,
-            'hostEmail':data.hostEmail
+            'hostEmail':obj
 
         },
         
