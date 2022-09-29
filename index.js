@@ -151,7 +151,7 @@ function GetMeetingSessions(data) {
         headers: {
             'Content-type': 'application/json',
             'Authorization': `Bearer  ${token}`,
-            'hostEmail': obj
+            'hostEmail':data.hostEmail
 
         },
         
