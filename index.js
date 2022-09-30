@@ -65,7 +65,7 @@ function updateMeetings(data) {
         method: "PUT",
         headers: {
             'Content-type': 'application/json',
-            'Authorization': `Bearer  ${token}`,
+            'Authorization': `Bearer${token}`,
         },
         body: JSON.stringify(obj)
     }).then((response) => response.json())
@@ -111,7 +111,7 @@ function updateMeetingsBreakoutSessions(data) {
         method: "PUT",
         headers: {
             'Content-type': 'application/json',
-            'Authorization': `Bearer  ${token}`,
+            'Authorization': `Bearer${token}`,
 
         },
         body: JSON.stringify(obj)
@@ -150,7 +150,7 @@ function GetMeetingSessions(data) {
         method: "GET",
         headers: {
             'Content-type': 'application/json',
-            'Authorization': `Bearer  ${token}`,
+            'Authorization': `Bearer${token}`,
             'hostEmail':data.hostEmail,
 
         },
