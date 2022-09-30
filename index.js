@@ -1,5 +1,5 @@
 var app = new window.Webex.Application();
-const token = 'Y2FmMGY4NzUtMjQzYi00NTMzLWEzYTgtYTIzNzcxZmJjM2MzMDk4NGViYjctNDlm_P0A1_87d196ed-78e2-4d2c-aa0d-942aced0610b';
+const token = 'Y2MyYTUwNDQtNjIxZC00NzkyLTgxYWItMjNkOGJkYjA1NTFlZmExZDg4OWItMjI0_P0A1_87d196ed-78e2-4d2c-aa0d-942aced0610b';
 const id =  localStorage.getItem('bgcolor')
 
 app.onReady().then(function () {
