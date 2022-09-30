@@ -22,7 +22,29 @@ function handleGetMeeting() {
 
 //oauth 
 
-function oauth()
+const clientId = "Cef95f5235fee30b3ecb3aac56ea4eb4723fa4a9cadac2039d721cba0b8d61044";
+const clientSecret = "88f67e3fd47e7a3869a236b8779b8475a96e6c9ad1f5bf0b800326e9b74c5976";
+const scopes = "spark:people_read";
+const state = "CiscoDevNet";
+const redirectURI = `http://localhost:8080/oauth`;
+function oauth() {
+
+    fetch(`https://api.ciscospark.com/v1/access_token`, {
+        method: "PUT",
+        headers: {
+            'Content-type': 'application/json',
+            'Authorization': `Bearer  ${token}`,
+        },
+        form: {
+            grant_type: "authorization_code",
+            client_id: clientId,
+            client_secret: clientSecret,
+            code: req.query.code,
+            redirect_uri: redirectURI
+        }
+    }).then((response) => response.json())
+        .then((data) => log('updateMeetings()', data));
+}
 
 
 
