@@ -1,5 +1,5 @@
 var app = new window.Webex.Application();
-const token = 'Y2MyYTUwNDQtNjIxZC00NzkyLTgxYWItMjNkOGJkYjA1NTFlZmExZDg4OWItMjI0_P0A1_87d196ed-78e2-4d2c-aa0d-942aced0610b';
+const token = 'ZTNjZmVhZDgtNTczNC00ODIxLWEzNDAtODY1ZDY2NmVkMWJjYTY4YzA5NmYtYmQw_P0A1_87d196ed-78e2-4d2c-aa0d-942aced0610b';
 const id = localStorage.getItem('bgcolor')
 
 app.onReady().then(function () {
@@ -17,6 +17,17 @@ function handleGetMeeting() {
         log('getMeeting() promise failed with error', Webex.Application.ErrorCodes[error]);
     });
 }
+
+
+
+//oauth 
+
+function oauth()
+
+
+
+
+
 
 
 function log(type, data) {
@@ -154,9 +165,6 @@ function GetMeetingSessions(data) {
             'hostEmail': data.hostEmail,
 
         },
-
-
-
     })
         .then((response) => response.json())
         .then((data) => log('updateMeetings()', data));
