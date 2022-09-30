@@ -1,6 +1,6 @@
 var app = new window.Webex.Application();
 const token = 'Y2MyYTUwNDQtNjIxZC00NzkyLTgxYWItMjNkOGJkYjA1NTFlZmExZDg4OWItMjI0_P0A1_87d196ed-78e2-4d2c-aa0d-942aced0610b';
-const id =  localStorage.getItem('bgcolor')
+const id = localStorage.getItem('bgcolor')
 
 app.onReady().then(function () {
     console.log('App is ready. App info:', app);
@@ -65,7 +65,7 @@ function updateMeetings(data) {
         method: "PUT",
         headers: {
             'Content-type': 'application/json',
-            'Authorization': `Bearer${token}`,
+            'Authorization': `Bearer  ${token}`,
         },
         body: JSON.stringify(obj)
     }).then((response) => response.json())
@@ -106,20 +106,20 @@ function updateMeetingsBreakoutSessions(data) {
 
     }
 
-   
+
     fetch(`https://webexapis.com/v1/meetings/${id}/breakoutSessions`, {
         method: "PUT",
         headers: {
             'Content-type': 'application/json',
-            'Authorization': `Bearer${token}`,
+            'Authorization': `Bearer  ${token}`,
 
         },
         body: JSON.stringify(obj)
 
 
     })
-    .then((response) => response.json())
-    .then((data) => log('updateMeetings()', data));
+        .then((response) => response.json())
+        .then((data) => log('updateMeetings()', data));
 }
 
 
@@ -131,7 +131,7 @@ function getSessions() {
     document.getElementById("GetMeetingSession").style.display = "block";
 }
 function getMeetingssection() {
-   const hostEmail = document.getElementById("hostEmailu").value;
+    const hostEmail = document.getElementById("hostEmailu").value;
     const Res = {};
     console.log("hostEmail", hostEmail);
     const Backend = Object.create(Res);
@@ -141,7 +141,7 @@ function getMeetingssection() {
 }
 
 function GetMeetingSessions(data) {
-    
+
     const obj = JSON.stringify({
         hostEmail: data.hostEmail,
 
@@ -150,16 +150,16 @@ function GetMeetingSessions(data) {
         method: "GET",
         headers: {
             'Content-type': 'application/json',
-            'Authorization': `Bearer${token}`,
-            'hostEmail':data.hostEmail,
+            'Authorization': `Bearer  ${token}`,
+            'hostEmail': data.hostEmail,
 
         },
-        
+
 
 
     })
-    .then((response) => response.json())
-    .then((data) => log('updateMeetings()', data));
+        .then((response) => response.json())
+        .then((data) => log('updateMeetings()', data));
 }
 
 
